@@ -4,7 +4,7 @@
     "type": "decision",
     "label": "Cell Morphology",
     "description": "After confirming Gram positive stain, determine the shape of the cells under the microscope.",
-    "question": "What is the cell morphology of your Gram positive organism?",
+    "question": "What is the shape of your Gram positive organism?",
     "options": [
       {
         "label": "Cocci (spherical)",
