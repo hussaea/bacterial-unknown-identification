@@ -31,6 +31,19 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Install editor dependencies
+        run: npm ci
+        working-directory: editor
+
+      - name: Build editor
+        run: npm run build
+        working-directory: editor
+        env:
+          VITE_BASE_URL: /bacterial-unknown-identification/editor/
+
+      - name: Copy editor build into dist
+        run: cp -r editor/dist dist/editor
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
