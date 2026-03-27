@@ -30,6 +30,7 @@ export default function App() {
   const redoStack = useRef([])
   // Always-current snapshot for reading before mutation
   const currentStateRef = useRef({ gramPosNodes, gramNegNodes })
+  // eslint-disable-next-line react-hooks/refs
   currentStateRef.current = { gramPosNodes, gramNegNodes }
 
   const nodes = activeTree === 'pos' ? gramPosNodes : gramNegNodes

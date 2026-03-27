@@ -43,7 +43,7 @@ function getInitialState(nodes, treeKey) {
         }
       }
     }
-  } catch {}
+  } catch { /* ignore */ }
   return { history: [nodes.root], choices: [] }
 }
 
@@ -55,7 +55,7 @@ function saveState(treeKey, newChoices) {
     } else {
       localStorage.removeItem(`bacterial-id-${treeKey}-path`)
     }
-  } catch {}
+  } catch { /* ignore */ }
 }
 
 // ─── Progress bar ─────────────────────────────────────────────────────────────
@@ -148,7 +148,7 @@ export default function Wizard({ wizardData, treeKey }) {
   function handleReset() {
     setState({ history: [nodes.root], choices: [] });
     window.location.hash = '';
-    try { localStorage.removeItem(`bacterial-id-${treeKey}-path`); } catch {}
+    try { localStorage.removeItem(`bacterial-id-${treeKey}-path`); } catch { /* ignore */ }
   }
 
   // Share: copy current URL (with hash) to clipboard
