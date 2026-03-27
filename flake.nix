@@ -13,14 +13,15 @@
       in {
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
+            eslint
             nodejs_20
-            bun
             just
+            vite
           ];
 
           shellHook = ''
             echo "Node.js $(node --version)"
-            echo "Bun $(bun --version)"
+            echo "npm $(npm --version)"
           '';
         };
       });

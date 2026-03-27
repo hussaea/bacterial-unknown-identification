@@ -1,39 +1,39 @@
 # Install dependencies for both app and editor
 install:
-    bun install
-    bun install --cwd editor
+    npm install
+    npm install --prefix editor
 
 # Run the main app dev server
 dev:
-    bun run dev
+    npm run dev
 
 # Run the editor dev server
 dev-editor:
-    bun run dev --cwd editor
+    npm run dev --prefix editor
 
 # Build the main app
 build:
-    bun run build
+    npm run build
 
 # Build the main app as a single self-contained file
 build-single:
-    bun run build:single
+    npm run build:single
 
 # Build the editor
 build-editor:
-    bun run build --cwd editor
+    npm run build --prefix editor
 
 # Build everything
 build-all: build build-editor
 
 # Preview the built main app
 preview:
-    bun run preview
+    npm run preview
 
 # Preview the built editor
 preview-editor:
-    bun run preview --cwd editor
+    npm run preview --prefix editor
 
 # Lint the main app
 lint:
-    bun run lint
+    npm run lint
