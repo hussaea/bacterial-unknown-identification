@@ -224,11 +224,11 @@
     "type": "decision",
     "label": "Oxygen Requirements",
     "description": "If an organism is strictly anaerobic, it will not grow in the presence of oxygen. ",
-    "question": "What are the oxygen requirements of the spore-forming rod?",
+    "question": "What are the oxygen requirements of the spore-forming rod? You do not need to do an experiment for this...",
     "options": [
       {
         "label": "Aerobic / Facultative",
-        "nextId": "result_bacillus"
+        "nextId": "Bacillus_Starch"
       },
       {
         "label": "Strictly Anaerobic",
@@ -271,15 +271,15 @@
     "id": "catalase_rod",
     "type": "decision",
     "label": "Catalase Test",
-    "description": "Find the catalase test in the lab manual. We will use the slide method.",
+    "description": "Add a drop of 3% hydrogen peroxide to a colony. Bubbling (O₂ release) = positive. Catalase breaks down H₂O₂ into water and oxygen.",
     "question": "Is the organism catalase positive or negative?",
     "options": [
       {
-        "label": "Positive ",
+        "label": "Positive (+) — bubbles",
         "nextId": "starch_hydrolysis"
       },
       {
-        "label": "Negative ",
+        "label": "Negative (−) — no bubbles",
         "nextId": "glucose_fermentation"
       }
     ]
@@ -379,5 +379,59 @@
     "label": "Corynebacterium xerosis",
     "description": "Corynebacterium xerosis is a gram positive rod that is negative for spore formation, negative for acid-fast staining, positive for catalase activity, and negative for starch hydrolysis",
     "organism": "Corynebacterium xerosis"
+  },
+  "Bacillus_Starch": {
+    "id": "Bacillus_Starch",
+    "type": "decision",
+    "label": "Starch Hydrolysis",
+    "description": "Find the starch hydrolysis experiment in your lab manual. ",
+    "organism": "",
+    "question": "Does your organism use amylase to hydrolyze starch?",
+    "options": [
+      {
+        "label": "Yes (amylase+)",
+        "nextId": "Bacillus_Voges_Proskauer"
+      },
+      {
+        "label": "No (amylase -)",
+        "nextId": "bacillus_catalase"
+      }
+    ]
+  },
+  "Bacillus_Voges_Proskauer": {
+    "id": "Bacillus_Voges_Proskauer",
+    "type": "decision",
+    "label": "VP test (Voges-Proskauer)",
+    "description": "Find the Voges-Proskauer test in your lab manual. Note that this is a part of a series of tests in the exercise, and the first part of the procedure is listed under \"methyl red test,\" because the methyl red and voges-proskauer tests are often done together as the \"MR-VP test\"",
+    "organism": "",
+    "question": "Does your organism produce 2,3 butanediol as a result of glucose fermentation?",
+    "options": [
+      {
+        "label": "yes (acetoin +)",
+        "nextId": ""
+      },
+      {
+        "label": "no (acetoin -)",
+        "nextId": ""
+      }
+    ]
+  },
+  "bacillus_catalase": {
+    "id": "bacillus_catalase",
+    "type": "decision",
+    "label": "Catalase Test",
+    "description": "Add a drop of 3% hydrogen peroxide to a colony. Bubbling (O₂ release) = positive. Catalase breaks down H₂O₂ into water and oxygen.",
+    "organism": "",
+    "question": "What is the result of the catalase test?",
+    "options": [
+      {
+        "label": "Positive (+) — bubbles",
+        "nextId": ""
+      },
+      {
+        "label": "Negative (−) — no bubbles",
+        "nextId": ""
+      }
+    ]
   }
 }
