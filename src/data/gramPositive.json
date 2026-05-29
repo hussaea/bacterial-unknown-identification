@@ -401,7 +401,7 @@
   "Bacillus_Voges_Proskauer": {
     "id": "Bacillus_Voges_Proskauer",
     "type": "decision",
-    "label": "VP test (Voges-Proskauer)",
+    "label": "VP test (Voges-Proskauer) Bacillus",
     "description": "Find the Voges-Proskauer test in your lab manual. Note that this is a part of a series of tests in the exercise, and the first part of the procedure is listed under \"methyl red test,\" because the methyl red and voges-proskauer tests are often done together as the \"MR-VP test\"",
     "organism": "",
     "question": "Does your organism produce 2,3 butanediol as a result of glucose fermentation?",
@@ -419,19 +419,69 @@
   "bacillus_catalase": {
     "id": "bacillus_catalase",
     "type": "decision",
-    "label": "Catalase Test",
+    "label": "Catalase Test (bacillus)",
     "description": "Add a drop of 3% hydrogen peroxide to a colony. Bubbling (O₂ release) = positive. Catalase breaks down H₂O₂ into water and oxygen.",
     "organism": "",
     "question": "What is the result of the catalase test?",
     "options": [
       {
         "label": "Positive (+) — bubbles",
-        "nextId": ""
+        "nextId": "Swollen_cell_bacillus"
       },
       {
         "label": "Negative (−) — no bubbles",
+        "nextId": "citrate_amylase_negative"
+      }
+    ]
+  },
+  "Swollen_cell_bacillus": {
+    "id": "Swollen_cell_bacillus",
+    "type": "decision",
+    "label": "Swollen Cell (amylase negative)",
+    "description": "No test is needed for this. Were your cells swollen (bulging) around the spore during sporulation (endospore test)? Ask Dr. Hussa for clarification. ",
+    "organism": "",
+    "question": "Was your sporulating cell swollen?",
+    "options": [
+      {
+        "label": "Yes",
+        "nextId": ""
+      },
+      {
+        "label": "No",
         "nextId": ""
       }
     ]
+  },
+  "citrate_amylase_negative": {
+    "id": "citrate_amylase_negative",
+    "type": "decision",
+    "label": "Citrate Test (amylase negative)",
+    "description": "The citrate test is part of a group of tests called IMViC, described in exercise 23 of your book. Please read through the procedure to find the materials required for the citrate test. ",
+    "organism": "",
+    "question": "Can your bacterium use citrate as a sole carbon source?",
+    "options": [
+      {
+        "label": "yes",
+        "nextId": "Bacillus_azotoformans"
+      },
+      {
+        "label": "no",
+        "nextId": "b_larvae_or_popilliae"
+      }
+    ]
+  },
+  "Bacillus_azotoformans": {
+    "id": "Bacillus_azotoformans",
+    "type": "result",
+    "label": "Bacillus azotoformans",
+    "description": "Bacillus azotoformans is a gram positive rod that makes endospores and grows under aerobic conditions. It is amylase negative, catalase negative, and citrate positive.",
+    "organism": "Bacillus azotoformans"
+  },
+  "b_larvae_or_popilliae": {
+    "id": "b_larvae_or_popilliae",
+    "type": "result",
+    "label": "Bacillus larvae or Bacullus popilliae",
+    "description": "we cannot easily distinguish between these two in our lab (talk to Dr. Hussa)",
+    "organism": ""
   }
 }
