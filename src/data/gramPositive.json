@@ -444,11 +444,11 @@
     "options": [
       {
         "label": "Yes",
-        "nextId": ""
+        "nextId": "are_you_sure"
       },
       {
         "label": "No",
-        "nextId": ""
+        "nextId": "are_you_sure"
       }
     ]
   },
@@ -483,5 +483,48 @@
     "label": "Bacillus larvae or Bacullus popilliae",
     "description": "we cannot easily distinguish between these two in our lab (talk to Dr. Hussa)",
     "organism": ""
+  },
+  "are_you_sure": {
+    "id": "are_you_sure",
+    "type": "result",
+    "label": "are you sure?",
+    "description": "If you have reached this page, please consult with Dr. Hussa on how to complete your analysis",
+    "organism": "none"
+  },
+  "Cell_Diameter_bacillus": {
+    "id": "Cell_Diameter_bacillus",
+    "type": "decision",
+    "label": "Cell Diameter (Bacillus)",
+    "description": "This test does not require a separate experiment. Consult with Dr. Hussa to determine the answer to this question",
+    "organism": "",
+    "question": "Is your organism greater than 1 micrometer in width (diameter)? ",
+    "options": [
+      {
+        "label": "yes",
+        "nextId": "are_you_sure"
+      },
+      {
+        "label": "no",
+        "nextId": "citrate_test_bacillus_amylase_positive"
+      }
+    ]
+  },
+  "citrate_test_bacillus_amylase_positive": {
+    "id": "citrate_test_bacillus_amylase_positive",
+    "type": "decision",
+    "label": "Citrate test (amylase positive)",
+    "description": "The citrate test is part of a group of tests called IMViC, described in exercise 23 of your book. Please read through the procedure to find the materials required for the citrate test. ",
+    "organism": "",
+    "question": "Can your bacterium use Citrate as the sole carbon source?",
+    "options": [
+      {
+        "label": "yes",
+        "nextId": ""
+      },
+      {
+        "label": "no",
+        "nextId": ""
+      }
+    ]
   }
 }
