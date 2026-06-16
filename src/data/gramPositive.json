@@ -408,7 +408,7 @@
     "options": [
       {
         "label": "yes (acetoin +)",
-        "nextId": ""
+        "nextId": "Cell_Diameter_bacillus"
       },
       {
         "label": "no (acetoin -)",
@@ -519,12 +519,151 @@
     "options": [
       {
         "label": "yes",
-        "nextId": ""
+        "nextId": "6_5_percent_NaCl_growth"
       },
       {
         "label": "no",
-        "nextId": ""
+        "nextId": "Mannitol_Fermentation_amylase_positive"
       }
     ]
+  },
+  "Mannitol_Fermentation_amylase_positive": {
+    "id": "Mannitol_Fermentation_amylase_positive",
+    "type": "decision",
+    "label": "Mannitol Fermentation (Amylase Positive)",
+    "description": "The mannitol fermentation test is described within the \"streak plate technique\" test section of your lab manual (exercise 15).",
+    "organism": "",
+    "question": "Does your organism ferment Mannitol?",
+    "options": [
+      {
+        "label": "yes",
+        "nextId": "Bacillus_Polymyxa"
+      },
+      {
+        "label": "no",
+        "nextId": "Bacillus_alvei"
+      }
+    ]
+  },
+  "Bacillus_Polymyxa": {
+    "id": "Bacillus_Polymyxa",
+    "type": "result",
+    "label": "Bacillus polymyxa",
+    "description": "Bacillus polymyxa is a gram positive rod that makes endospores and grows under aerobic conditions. It is amylase positive, vogues proskauer positive, <1 micrometer, citrate negative, and mannitol positive.",
+    "organism": "Bacillus polymyxa"
+  },
+  "Bacillus_alvei": {
+    "id": "Bacillus_alvei",
+    "type": "result",
+    "label": "Bacillus alvei",
+    "description": "Bacillus alvei is a gram positive rod that makes endospores and grows under aerobic conditions. It is amylase positive, vogues proskauer positive, <1 micrometer, citrate negative, and mannitol negative.",
+    "organism": "Bacillus alvei"
+  },
+  "6_5_percent_NaCl_growth": {
+    "id": "6_5_percent_NaCl_growth",
+    "type": "decision",
+    "label": "6.5% NaCl growth",
+    "description": "Ask Dr. Hussa. This isn't in your lab manual. Basically, we need to have growth media that is comprised of 6.5% NaCl. Regular growth medium has 1% NaCl. ",
+    "organism": "",
+    "question": "Can your organism grow in 6.5% salt medium?",
+    "options": [
+      {
+        "label": "yes",
+        "nextId": "Growth_at_55_degrees_celsius"
+      },
+      {
+        "label": "no",
+        "nextId": "Bacillus_coagulans"
+      }
+    ]
+  },
+  "Bacillus_coagulans": {
+    "id": "Bacillus_coagulans",
+    "type": "result",
+    "label": "Bacillus coagulans",
+    "description": "Bacillus coagulans is a gram positive rod that makes endospores and grows under aerobic conditions. It is amylase positive, vogues proskauer positive, <1 micrometer, citrate positive, and cannot grow in 6.5% salt (NaCl).",
+    "organism": "Bacillus coagulans"
+  },
+  "Growth_at_55_degrees_celsius": {
+    "id": "Growth_at_55_degrees_celsius",
+    "type": "decision",
+    "label": "Growth at 55 degrees celsius",
+    "description": "This is not in your lab manual. We instead just need to try and grow your organism in regular growth medium at 55 degrees celsius, then observe whether the organism grew successfully.",
+    "organism": "",
+    "question": "Can your organism grow at 55 degrees?",
+    "options": [
+      {
+        "label": "yes",
+        "nextId": "Bacillus_licheniformis"
+      },
+      {
+        "label": "no",
+        "nextId": "Bacillus_subtilis"
+      }
+    ]
+  },
+  "Bacillus_subtilis": {
+    "id": "Bacillus_subtilis",
+    "type": "result",
+    "label": "Bacillus subtilis",
+    "description": "Bacillus subtilis is a gram positive rod that makes endospores and grows under aerobic conditions. It is amylase positive, vogues proskauer positive, <1 micrometer, citrate positive, can grow in 6.5% NaCl, and cannot grow at 55 degrees.",
+    "organism": "Bacillus subtilis"
+  },
+  "Bacillus_licheniformis": {
+    "id": "Bacillus_licheniformis",
+    "type": "result",
+    "label": "Bacillus licheniformis",
+    "description": "Bacillus licheniformis is a gram positive rod that makes endospores and grows under aerobic conditions. It is amylase positive, vogues proskauer positive, <1 micrometer, citrate positive, can grow in 6.5% NaCl, and can grow at 55 degrees.",
+    "organism": "Bacillus licheniformis"
+  },
+  "swollen_cell_amylase_positive": {
+    "id": "swollen_cell_amylase_positive",
+    "type": "decision",
+    "label": "swollen cell (amylase positive)",
+    "description": "No test is needed for this. Were your cells swollen (bulging) around the spore during sporulation (endospore test)? Ask Dr. Hussa for clarification. ",
+    "organism": "",
+    "question": "Was your sporulating cell swollen?",
+    "options": [
+      {
+        "label": "yes",
+        "nextId": "are_you_sure"
+      },
+      {
+        "label": "no",
+        "nextId": "citrate_test_amylase_pos_vp_neg"
+      }
+    ]
+  },
+  "citrate_test_amylase_pos_vp_neg": {
+    "id": "citrate_test_amylase_pos_vp_neg",
+    "type": "decision",
+    "label": "citrate test (amylase positive VP negative)",
+    "description": "The citrate test is part of a group of tests called IMViC, described in exercise 23 of your book. Please read through the procedure to find the materials required for the citrate test. ",
+    "organism": "",
+    "question": "Can your bacterium use Citrate as the sole carbon source?",
+    "options": [
+      {
+        "label": "yes",
+        "nextId": "Bacillus_megaterium"
+      },
+      {
+        "label": "no",
+        "nextId": "Bacillus_badius"
+      }
+    ]
+  },
+  "Bacillus_megaterium": {
+    "id": "Bacillus_megaterium",
+    "type": "result",
+    "label": "Bacillus megaterium",
+    "description": "Bacillus megaterium is a gram positive rod that makes endospores and grows under aerobic conditions. It is amylase positive, vogues proskauer negative, does not swell during sporulation, and is citrate positive.",
+    "organism": "Bacillus megaterium"
+  },
+  "Bacillus_badius": {
+    "id": "Bacillus_badius",
+    "type": "result",
+    "label": "Bacillus badius",
+    "description": "Bacillus megaterium is a gram positive rod that makes endospores and grows under aerobic conditions. It is amylase positive, vogues proskauer negative, does not swell during sporulation, and is citrate negative.",
+    "organism": "Bacillus badius"
   }
 }
