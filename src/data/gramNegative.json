@@ -3,8 +3,8 @@
     "id": "root",
     "type": "decision",
     "label": "Cell Morphology",
-    "description": "After confirming Gram negative stain (pink/red), examine cell shape under the microscope.",
-    "question": "What is the cell morphology of your Gram negative organism?",
+    "description": "After confirming Gram negative stain (pink/red), recall the shape of your cells.",
+    "question": "What is the cell morphology (shape) of your Gram negative organism?",
     "options": [
       {
         "label": "Cocci (spherical/oval)",
@@ -86,7 +86,7 @@
     "id": "oxidase_rods",
     "type": "decision",
     "label": "Oxidase Test",
-    "description": "Apply oxidase reagent to a colony. Purple/blue = positive. This single test separates the Enterobacteriaceae (oxidase negative — the largest family of GN rods) from non-fermenters and other gram negative rods.",
+    "description": "Find the oxidase test in your lab manual. There are many ways to test for oxidase acivity, but we will use sterile swabs and Spottest oxidase reagent vials (also known as ampules). you will start the procedure at the \"second period\" since you will have already grown your bacteria on plates.",
     "question": "What is the result of the oxidase test?",
     "options": [
       {
@@ -95,7 +95,7 @@
       },
       {
         "label": "Positive (+) — Non-Enterobacteriaceae",
-        "nextId": "glucose_of"
+        "nextId": "glucose"
       }
     ]
   },
@@ -274,19 +274,19 @@
     "description": "Gram negative rod, oxidase negative, lactose negative, H₂S negative, motile at 25°C but non-motile at 37°C (a useful distinguishing feature). Y. pestis causes plague (bubonic, septicemic, pneumonic); Y. enterocolitica causes gastroenteritis and reactive arthritis (Reiter syndrome). Cold-tolerant — can multiply in refrigerated food.",
     "organism": "Yersinia spp."
   },
-  "glucose_of": {
-    "id": "glucose_of",
+  "glucose": {
+    "id": "glucose",
     "type": "decision",
-    "label": "Glucose O/F Test",
-    "description": "Inoculate two tubes of Hugh-Leifson O/F medium; overlay one with mineral oil (anaerobic). Acid in both tubes = fermentation. Acid in open tube only = oxidation. No acid in either = non-reactive. Separates fermenters (Vibrio, Aeromonas) from oxidizers (Pseudomonas).",
-    "question": "How does the organism utilize glucose in O/F medium?",
+    "label": "Glucose fermentation Test",
+    "description": "The glucose fermentation test is PART of a series of tests labeled \"Carbohydrates I: Fermentation and beta galactosidase activity\" in you manual. We will use the Durham tube procedure.",
+    "question": "Does your organism ferment glucose?",
     "options": [
       {
-        "label": "Fermentation (acid in both tubes)",
+        "label": "yes (produces acid)",
         "nextId": "salt_curved"
       },
       {
-        "label": "Oxidation only (open tube only)",
+        "label": "no (does not produce acid)",
         "nextId": "pyocyanin"
       }
     ]
@@ -295,7 +295,7 @@
     "id": "salt_curved",
     "type": "decision",
     "label": "Salt Tolerance + Cell Morphology",
-    "description": "Test growth in 6.5% NaCl broth (halophilic = Vibrio) and examine cell morphology. Vibrio has characteristic curved or comma-shaped cells and tolerates salt. Aeromonas is a straight rod and is not halophilic.",
+    "description": "Ask Dr. Hussa. This isn't in your lab manual. Basically, we need to have growth media that is comprised of 6.5% NaCl. Regular growth medium has 1% NaCl. Cell curvature should have been visible during our previous microscope analysis.",
     "question": "Does the organism tolerate 6.5% NaCl and/or have curved cells?",
     "options": [
       {

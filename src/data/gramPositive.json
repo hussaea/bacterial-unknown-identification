@@ -8,7 +8,7 @@
     "options": [
       {
         "label": "Cocci (spherical)",
-        "nextId": "catalase"
+        "nextId": "catalase_Gpos_coccus"
       },
       {
         "label": "Rods (bacilli)",
@@ -16,8 +16,8 @@
       }
     ]
   },
-  "catalase": {
-    "id": "catalase",
+  "catalase_Gpos_coccus": {
+    "id": "catalase_Gpos_coccus",
     "type": "decision",
     "label": "Catalase Test",
     "description": "Add a drop of 3% hydrogen peroxide to a colony. Bubbling (O₂ release) = positive. Catalase breaks down H₂O₂ into water and oxygen.",
@@ -25,7 +25,7 @@
     "options": [
       {
         "label": "Positive (+) — bubbles",
-        "nextId": "coagulase"
+        "nextId": "mannitol_fermentation_g_pos_coccus"
       },
       {
         "label": "Negative (−) — no bubbles",
@@ -33,43 +33,19 @@
       }
     ]
   },
-  "coagulase": {
-    "id": "coagulase",
-    "type": "decision",
-    "label": "Coagulase Test",
-    "description": "Mix colony with rabbit plasma. Clot formation = positive. Coagulase-positive staphylococci can clot fibrinogen.",
-    "question": "What is the result of the coagulase test?",
-    "options": [
-      {
-        "label": "Positive (+) — clot forms",
-        "nextId": "result_aureus"
-      },
-      {
-        "label": "Negative (−) — no clot",
-        "nextId": "novobiocin"
-      }
-    ]
-  },
-  "result_aureus": {
-    "id": "result_aureus",
-    "type": "result",
-    "label": "Staphylococcus aureus",
-    "description": "Gram positive, catalase positive, coagulase positive. A major human pathogen; causes skin infections, pneumonia, endocarditis, and toxic shock syndrome. Often displays golden-yellow colonies.",
-    "organism": "Staphylococcus aureus"
-  },
   "novobiocin": {
     "id": "novobiocin",
     "type": "decision",
     "label": "Novobiocin Sensitivity",
-    "description": "Place a novobiocin disk on the plate. A zone of inhibition ≥ 16 mm = sensitive. Differentiates coagulase-negative Staphylococcus species.",
+    "description": "Your lab manual has an exercise (#35) dedicated to how to test for antibiotic sensitivity. We can test novobiocin along with other antibiotics using this test. Dr. Hussa will decide which other antibiotics to test (based on what we have in stock)",
     "question": "What is the result of the novobiocin sensitivity test?",
     "options": [
       {
-        "label": "Sensitive (zone ≥ 16 mm)",
+        "label": "Sensitive ",
         "nextId": "result_epidermidis"
       },
       {
-        "label": "Resistant (zone < 16 mm)",
+        "label": "Resistant ",
         "nextId": "result_saprophyticus"
       }
     ]
@@ -78,14 +54,14 @@
     "id": "result_epidermidis",
     "type": "result",
     "label": "Staphylococcus epidermidis",
-    "description": "Gram positive, catalase positive, coagulase negative, novobiocin sensitive. Common skin commensal; clinically significant in immunocompromised patients and prosthetic device infections.",
+    "description": "Staphylococcus epidermidis is Gram positive, catalase positive, mannitol negative, not yellow, and novobiocin sensitive. ",
     "organism": "Staphylococcus epidermidis"
   },
   "result_saprophyticus": {
     "id": "result_saprophyticus",
     "type": "result",
     "label": "Staphylococcus saprophyticus",
-    "description": "Gram positive, catalase positive, coagulase negative, novobiocin resistant. Common cause of urinary tract infections in young sexually active women.",
+    "description": "Staphylococcus saprophyticus is Gram positive, catalase positive, mannitol negative, not yellow, and novobiocin resistant. ",
     "organism": "Staphylococcus saprophyticus"
   },
   "hemolysis": {
@@ -236,13 +212,6 @@
       }
     ]
   },
-  "result_bacillus": {
-    "id": "result_bacillus",
-    "type": "result",
-    "label": "Bacillus spp.",
-    "description": "Gram positive, endospore-forming, aerobic rod. Includes B. anthracis (anthrax), B. cereus (food poisoning), and B. subtilis (common lab saprophyte). Spores are highly resistant to heat and chemicals.",
-    "organism": "Bacillus spp."
-  },
   "result_clostridium": {
     "id": "result_clostridium",
     "type": "result",
@@ -280,7 +249,7 @@
       },
       {
         "label": "Negative (−) — no bubbles",
-        "nextId": "glucose_fermentation"
+        "nextId": "glucose_fermentation_gpos_rods"
       }
     ]
   },
@@ -291,11 +260,11 @@
     "description": "Mycobacterium smegmatis: Gram positive rods, endospore negative, acid fast.",
     "organism": "mycobacterium smegmatis"
   },
-  "glucose_fermentation": {
-    "id": "glucose_fermentation",
+  "glucose_fermentation_gpos_rods": {
+    "id": "glucose_fermentation_gpos_rods",
     "type": "decision",
     "label": "Glucose fermentation Test",
-    "description": "The glucose fermentation test is PART of a series of tests labeled \"Carbohydrates I: Fermentation and beta galactosidase activity\" in you manual. We will use the Durham tube procedure",
+    "description": "The glucose fermentation test is PART of a series of tests labeled \"Carbohydrates I: Fermentation and beta galactosidase activity\" in you manual. We will use the Durham tube procedure.",
     "organism": "",
     "question": "is your organism positive for glucose fermentation?",
     "options": [
@@ -412,7 +381,7 @@
       },
       {
         "label": "no (acetoin -)",
-        "nextId": ""
+        "nextId": "swollen_cell_amylase_positive"
       }
     ]
   },
@@ -665,5 +634,80 @@
     "label": "Bacillus badius",
     "description": "Bacillus megaterium is a gram positive rod that makes endospores and grows under aerobic conditions. It is amylase positive, vogues proskauer negative, does not swell during sporulation, and is citrate negative.",
     "organism": "Bacillus badius"
+  },
+  "mannitol_fermentation_g_pos_coccus": {
+    "id": "mannitol_fermentation_g_pos_coccus",
+    "type": "decision",
+    "label": "mannitol fermentation (Gram positive coccus)",
+    "description": "The mannitol fermentation test is described within the \"streak plate technique\" test section of your lab manual (exercise 15).",
+    "organism": "",
+    "question": "Does your organism ferment mannitol?",
+    "options": [
+      {
+        "label": "yes",
+        "nextId": "Staph_aureus"
+      },
+      {
+        "label": "no",
+        "nextId": "yellow_colony"
+      }
+    ]
+  },
+  "Staph_aureus": {
+    "id": "Staph_aureus",
+    "type": "result",
+    "label": "Staphylococcus aureus",
+    "description": "Staphylococcus aureus is a gram positive coccus shaped organism that is catalase positive and can ferment mannitol.",
+    "organism": "Staphylococcus aureus"
+  },
+  "yellow_colony": {
+    "id": "yellow_colony",
+    "type": "decision",
+    "label": "yellow pigmentation ",
+    "description": "This does not require an experiment. Look at the colonies of your unknown organism. They may be obviously yellow (not beige).",
+    "organism": "",
+    "question": "Are your colonies yellow?",
+    "options": [
+      {
+        "label": "yes, they are yellow",
+        "nextId": "glucose_fermentation_gpos_coccus"
+      },
+      {
+        "label": "no, they are not yellow",
+        "nextId": "novobiocin"
+      }
+    ]
+  },
+  "glucose_fermentation_gpos_coccus": {
+    "id": "glucose_fermentation_gpos_coccus",
+    "type": "decision",
+    "label": "Glucose fermentation (gram + coccus)",
+    "description": "The glucose fermentation test is PART of a series of tests labeled \"Carbohydrates I: Fermentation and beta galactosidase activity\" in you manual. We will use the Durham tube procedure.",
+    "organism": "",
+    "question": "Does your organism ferment glucose?",
+    "options": [
+      {
+        "label": "Yes (produces acid and/or gas)",
+        "nextId": "micrococcus_varians"
+      },
+      {
+        "label": "No (no acid or gas)",
+        "nextId": "Micrococcus_luteus"
+      }
+    ]
+  },
+  "micrococcus_varians": {
+    "id": "micrococcus_varians",
+    "type": "result",
+    "label": "Micrococcus varians ",
+    "description": "Micrococcus varians is a Gram positive coccus shaped organism that is catalase positive, cannot ferment mannitol, does produce a yellow pigment, and can ferment glucose.",
+    "organism": "Micrococcus varians"
+  },
+  "Micrococcus_luteus": {
+    "id": "Micrococcus_luteus",
+    "type": "result",
+    "label": "Micrococcus luteus",
+    "description": "Micrococcus luteus is a Gram positive coccus shaped organism that is catalase positive, cannot ferment mannitol, does produce a yellow pigment, and cannot ferment glucose.",
+    "organism": "Micrococcus luteus"
   }
 }
