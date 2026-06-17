@@ -3,7 +3,7 @@
     "id": "root",
     "type": "decision",
     "label": "Cell Morphology",
-    "description": "After confirming Gram positive stain, determine the shape of the cells under the microscope.",
+    "description": "After confirming Gram positive stain, recall the shape of the cells.",
     "question": "What is the shape of your Gram positive organism?",
     "options": [
       {
